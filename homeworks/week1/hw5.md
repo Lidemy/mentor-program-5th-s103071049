@@ -19,7 +19,7 @@
 
 (6) 資料庫找到後，回傳資料給server
 
-(7) seerver 回傳response給硬體，硬體再回傳response給作業系統，作業系統再回傳response給瀏覽器
+(7) server 回傳response給硬體，硬體再回傳response給作業系統，作業系統再回傳response給瀏覽器
 
 (8) 瀏覽器解析回傳的資訊，並於頁面渲染顯示出來
 
