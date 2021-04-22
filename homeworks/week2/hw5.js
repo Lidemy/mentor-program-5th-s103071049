@@ -1,17 +1,14 @@
 function join(arr, concatStr) {
-	
-	let result= ''
-	if(concatStr===''){
-		for(let i=0;i<arr.length;i++){
-			result+=(arr[i]+concatStr)
-				}	return result
-					  }	
-	else{
-		for(let i=0;i<arr.length;i++){
-			result+=(arr[i]+concatStr)
-				}	return result.slice(0,result.length-1)
-		}
-	
+	let result=''
+	let array=[];
+	for(let i=0;i<arr.length;i++){
+	 array.push(arr[i],concatStr)
+
+	}//return  array
+
+	for(let i=0;i<array.length-1;i++){
+		result+=array[i]
+	}return result
 	
 }
 
@@ -27,7 +24,8 @@ function repeat(str, times) {
 console.log(join([1, 2, 3], ''))
 console.log(join(["a", "b", "c"], "!"))
 console.log(join(["a", 1, "b", 2, "c", 3], ','))
+console.log(join(["aaa", "bb", "c", "dddd"], ',,'))
 
-console.log(join(['a'], '!'));
+
 console.log(repeat('a', 5));
 console.log(repeat('yoyo', 2));
