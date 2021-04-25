@@ -28,7 +28,16 @@ function multiply(a,b){
 	let str=''
 	for(let i=0;i<result.length;i++){
 		str+=result[i]
-	}return str
+	}
+	if(str[0]==='0'){
+		let str2=''
+		for(let i=1;i<str.length;i++){
+			str2+=str[i]
+		}return str2
+	}
+	else {
+		return str
+	}
 
 }
 console.log(multiply('97','46'))
