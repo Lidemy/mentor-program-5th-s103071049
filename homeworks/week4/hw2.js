@@ -77,3 +77,13 @@ function update(paraTwo, paraThree) {
       }
     })
 }
+
+/* request (
+  "https://lidemy-book-store.herokuapp.com/books",
+  function (error, response, body) {
+  const json = JSON.parse(body)
+  const temp = Object.keys(json).length
+  console.log(temp)
+  console.log(body)
+  }
+) */
