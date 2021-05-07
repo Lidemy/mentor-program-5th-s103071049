@@ -2,12 +2,21 @@
 const request = require('request')
 
 request(
-  'https://lidemy-book-store.herokuapp.com/books',
+  'https://lidemy-book-store.herokuapp.com/books?_limit=10',
   (error, response, body) => {
     // console.log(typeof(body)) 是一個 str
-    const json = JSON.parse(body)
+    if (error) {
+      return console.log('error', error)
+    }
+
     // console.log(json[0].name)
-    for (let i = 0; i < 10; i++) {
-      console.log(`${json[i].id} ${json[i].name}`)
+    let books
+    try {
+      books = JSON.parse(body)
+    } catch (error) {
+      return console.log('error', error)
+    }
+    for (let i = 0; i < books.length; i++) {
+      console.log(`${books[i].id} ${books[i].name}`)
     }
   })
