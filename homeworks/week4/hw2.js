@@ -27,6 +27,9 @@ switch (paraOne) {
   case 'update':
     update(paraTwo, paraThree)
     break
+
+  default :
+    console.log('unknown action')
 }
 
 function list() {
