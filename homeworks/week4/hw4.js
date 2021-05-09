@@ -13,6 +13,9 @@ request(
   },
 
   (error, response, body) => {
+    if (error) {
+      return console.log(error)
+    }
     try {
       const json = JSON.parse(body)
       // eslint-disable-next-line
