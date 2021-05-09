@@ -34,10 +34,13 @@ switch (paraOne) {
 
 function list() {
   request(
-    'https://lidemy-book-store.herokuapp.com/books',
+    'https://lidemy-book-store.herokuapp.com/books?_limit=20',
     (error, response, body) => {
-      for (let i = 0; i < 20; i++) {
-        const json = JSON.parse(body)
+      if (error) {
+        return console.log('抓取失敗', error)
+      }
+      const json = JSON.parse(body)
+      for (let i = 0; i < json.length; i++) {
         console.log(`${json[i].id} ${json[i].name}`)
       }
     }
@@ -48,6 +51,9 @@ function read(paraTwo) {
   request(
      `https://lidemy-book-store.herokuapp.com/books/${paraTwo}`,
      (error, response, body) => {
+       if (error) {
+         return console.log('抓取失敗', error)
+       }
        const json = JSON.parse(body)
        console.log(json.name)
      }
@@ -56,7 +62,13 @@ function read(paraTwo) {
 
 function del(paraTwo) {
   request.delete(
-      `https://lidemy-book-store.herokuapp.com/books/${paraTwo}`
+      `https://lidemy-book-store.herokuapp.com/books/${paraTwo}`,
+      (error, response, body) => {
+        if (error) {
+          return console.log('刪除失敗', error)
+        }
+        console.log('刪除成功')
+      }
   )
 }
 
@@ -67,6 +79,11 @@ function create(paraTwo) {
       form: {
         name: paraTwo
       }
+    }, (error, response, body) => {
+      if (error) {
+        return console.log('新增失敗', error)
+      }
+      console.log('新增成功')
     }
   )
 }
@@ -78,15 +95,10 @@ function update(paraTwo, paraThree) {
       form: {
         name: paraThree
       }
+    }, (error, body, response) => {
+      if (error) {
+        return console.log('更新失敗', error)
+      }
+      console.log('更新成功')
     })
 }
-
-/* request (
-  "https://lidemy-book-store.herokuapp.com/books",
-  function (error, response, body) {
-  const json = JSON.parse(body)
-  const temp = Object.keys(json).length
-  console.log(temp)
-  console.log(body)
-  }
-) */
