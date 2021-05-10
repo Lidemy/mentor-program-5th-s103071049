@@ -39,7 +39,12 @@ function list() {
       if (error) {
         return console.log('抓取失敗', error)
       }
-      const json = JSON.parse(body)
+      let json
+      try {
+        json = JSON.parse(body)
+      } catch (error) {
+        return console.log('error', error)
+      }
       for (let i = 0; i < json.length; i++) {
         console.log(`${json[i].id} ${json[i].name}`)
       }
@@ -54,7 +59,12 @@ function read(paraTwo) {
        if (error) {
          return console.log('抓取失敗', error)
        }
-       const json = JSON.parse(body)
+       let json
+       try {
+         json = JSON.parse(body)
+       } catch (error) {
+         return console.log('error', error)
+       }
        console.log(json.name)
      }
   )
