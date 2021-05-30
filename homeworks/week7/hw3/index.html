@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>留言板</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"/>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<div class="wrap">
+		<nav class="nav__bar">
+			<div class="nav__bar-title">
+				Todo List
+			</div>
+			<div class='circle' id='left-circle'></div>
+			<div class='circle' id='right-circle'></div>
+			<div class="input">
+			<input type="text" name="bar" placeholder="Add something to do here <(￣︶￣)>?">
+		</div>
+		</nav>
+		
+		<ul class="items">
+			<div class="items-group">
+				<input type="checkbox" name="btn" class="todo__check">
+				<li class="item">Clean the room</li>
+				<button class="btn-delete"></button>
+			</div>
+			<div class="items-group">
+				<input type="checkbox" name="btn" class="todo__check">
+				<li class="item">Pay bills</li>
+				<button class="btn-delete"></button>
+			</div>
+			<div class="items-group">
+				<input type="checkbox" name="btn" class="todo__check">
+				<li class="item">Read a book</li>
+				<button class="btn-delete"></button>
+			</div>
+			<div class="items-group">
+				<input type="checkbox" name="btn" class="todo__check">
+				<li class="item">Shopping</li>
+				<button class="btn-delete"></button>
+			</div>
+			<div class="items-group">
+				<input type="checkbox" name="btn" class="todo__check">
+				<li class="item">Dating</li>
+				<button class="btn-delete"></button>
+			</div>
+		</ul>
+	</div>
+<script src="./index.js"></script>
+</body>
+</html>
