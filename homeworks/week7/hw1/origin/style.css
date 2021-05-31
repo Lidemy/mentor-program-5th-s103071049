@@ -1,0 +1,100 @@
+body {
+	background: rgba(0, 0, 0, 0.3);
+}
+
+
+.wrapper {
+	max-width: 645px;
+	background: white;
+	margin:10% auto;
+	box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+	border-top: solid 8px #fad312;
+	padding: 64px 32px;
+}
+
+.apply-form__title {
+	margin: 0;
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.apply-form__desc {
+	margin-top: 32px;
+	font-size: 14px;
+	line-height: 1.5em
+}
+.apply-form__warn {
+	margin-top: 20px;
+	font-size: 14px;
+	line-height: 1.5em
+}
+
+.apply-form__notice {
+	margin-top: 22px;
+	font-size: 16px;
+	color: #e74149;
+}
+
+.input-block {
+  margin-top: 55px;
+}
+
+.input-block__title {
+  text-align: left;
+  font-size: 20px;
+}
+.input-block__desc {
+  font-size: 14px;
+  margin-top: 8px;
+} 
+
+.input-block__input {
+  margin-top: 18px;
+}
+
+.input-block__input input[type=text] {
+	border: solid 1px #d0d0d0;
+	font-size: 16px;
+	padding: 8px;
+}
+
+.input-block__input input[type=email] {
+	border: solid 1px #d0d0d0;
+	font-size: 16px;
+	padding: 8px;
+}
+
+.required:after {
+	content: "*";
+	color: #e74149;
+	
+}
+
+.apply-form__submit {
+	background: #fad312;
+	padding: 12px 32px;
+	font-size: 15px;
+	margin-top: 48px;
+	border: none;
+	border-radius: 3px;
+}
+
+footer {
+	background-color: #000000;
+	color: #999999;
+	font-size: 13px;
+	text-align: center;
+	padding: 24px 12px;
+}
+
+.input-block__input label {
+	display: block;
+	margin-top: 12px;
+}
+
+.warn {
+	color: #e74149;
+	padding: 8px;
+	display: inline-block;
+	visibility: hidden;
+}
