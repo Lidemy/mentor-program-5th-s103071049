@@ -52,65 +52,26 @@ event delegation 中文翻譯：事件代理，當我們需要對很多元素新
 
 舉例：
 
-下列代碼，可以清楚的在 console 看到點擊超連結事件是正常傳遞，但因為我加了 e.preventDefault()
-阻止超連結的預設行為：按了之後連到某個地方，所以當我點擊 link to google，不管怎麼點，他都不會有反應。
+狀態一、
 
+submit 的預設行為是提交，所以現在不管怎麼按，他都不會送出。
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./style.css">
-
-  <title>test</title>
-</head>
-<body>
-  <form>
-    <a class ='link' href="https://www.google.com/">
-      link to google
-    </a>
-  </form>
-
-  <script>
-    const element = document.querySelector('.link')
-    element.addEventListener('click', function(e) {
+<script>
+    const element = document.querySelector('.login-form')
+    element.addEventListener('submit', function(e) {
       e.preventDefault()
     })
-
-    addEvent('.link')
-    function addEvent(className) {
-      document.querySelector(className)
-      .addEventListener('click', function() {
-        console.log(className, 'capture')
-      },true)
-
-      document.querySelector(className)
-      .addEventListener('click', function() {
-        console.log(className, 'bubble')
-      },false)
-    }
-  </script>
-
-</body>
-</html>
+</script>
 ```
-
-在原本的代碼中，做些微的改變，我們發現事件的傳遞鏈被斷開了，bubble phase 現在到不了，然而阻止 capture 但事件
-還是被觸發，是因為這個事件在 target phase 上。阻止事件傳遞原本的還是會被觸發。
+狀態二、
+window 階段就阻止事件傳遞下去，所以後續所有的東西都不會收到事件
 
 ```html
-    function addEvent(className) {
-      document.querySelector(className)
-      .addEventListener('click', function(e) {
-        e.stopPropagation()
-        console.log(className, 'capture')
-      },true)
+window.addEventListener('click', function(e) {
+      e.stopPropagation()
+    },true)
 
 ```
-值得注意的是，在這樣的狀況下，可以順利地連到 google，為甚麼原本的阻止預設機制失靈了?
-因為
-
 
 
