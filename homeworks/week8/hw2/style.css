@@ -56,7 +56,12 @@ nav {
 	margin: 12px;
 	background: #808069;
 	position: relative;
+}
 
+.stream:hover {
+	transform: scale(1.04);
+	cursor: pointer;
+	filter: brightness(1.2);
 }
 
 .introduction-title {
@@ -129,9 +134,16 @@ div {
 	}
 	.navbar__item {
 		width: 100%;
+		flex-wrap: wrap;
+		justify-content: center;
+		border-top: 1px solid #aaa;
 	}
 	.item {
 		padding: 12px 2px;
 		font-size: 14px;
+	}
+
+	.navbar__title {
+		margin-bottom: 10px;
 	}
 }
