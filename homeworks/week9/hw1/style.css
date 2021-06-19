@@ -1,0 +1,164 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: white;
+}
+.warning {
+	width: 100%;
+	background: #94a453;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	padding: 10px;
+}
+
+.content {
+	margin: 0 auto;
+	max-width: 800px;
+	width: 100%;
+	background: honeydew;
+	box-shadow: 1px 1px 3px #e8e8e8;
+	margin-top: 24px;
+	padding: 24px;
+}
+
+.btn a {
+	text-decoration: none;
+	color: black;
+	border: 1px solid lightgreen;
+	background: white;
+	max-width: 100px;
+	width: 100%;
+	text-align: center;
+	display: inline-block;
+	padding: 12px;
+	border-radius: 4px;
+	transition: background 0.6s;
+	color: darkslategray;
+	font-weight: bold;
+}
+
+
+.btn a:hover {
+	background: palegreen;
+}
+.message div {
+	display: flex;
+	margin-top: 36px;
+	width: 100%;
+}
+.register_input {
+	display: block;
+	text-decoration: none;
+	color: black;
+	border: 1px solid lightgreen;
+	background: white;
+	max-width: 300px;
+	width: 80%;
+	text-align: center;
+	padding: 8px;
+	margin-left: 12px;
+	border-radius: 4px;
+	transition: background 0.6s;
+	color: darkslategray;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.desc .title {
+	margin-top:36px;
+	font-size: 36px;
+	color: darkslategray;
+}
+
+.greeting__word {
+	margin-top: 12px;
+	color: darkslategray;
+}
+
+#message__box {
+	margin-top: 12px;
+	border: 1px solid #556b2f;
+	outline: none;
+	width: 90%;
+	padding: 4px;
+	border-radius: 4px;
+	text-align: left;
+	font-size: 16px;
+	max-height: 200px;
+}
+
+.submit__btn {
+	max-width: 100px;
+	width: 100%;
+	display: block;
+	text-align: center;
+	padding: 12px 0 ;
+	margin-top: 16px;
+	border: 1px solid #556b2f;
+	border-radius: 4px;
+	font-size: 16px ;
+	transition: background 0.4s;
+}
+
+.submit__btn:hover{
+	background: #556b2f;
+	color: white;
+	cursor: pointer;
+}
+
+hr {
+	margin-top: 12px;
+	height: 2px;
+	border: 1px solid #556b2f;
+}
+
+.card {
+	display: flex;
+	margin-top: 16px;
+}
+
+.card + .card {
+	margin-top: 36px;
+}
+
+.card__img {
+	height: 50px;
+	min-width: 50px;
+	border-radius: 50%;
+    background: #556b2f ;
+}
+
+.card__text {
+	margin-left: 12px;
+	word-break: break-word;
+}
+
+.card__text-content {
+	line-height: 1.2em;
+	word-break: break-word;
+	white-space: pre-line;
+}
+
+.nickname {
+	color: olive;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.date {
+	color: gray;
+    margin-left: 4px;
+}
+
+.error__word {
+	color: red;
+	margin-top: 12px;
+}
+
+.error__word-noContent {
+	color: red;
+}
