@@ -1,0 +1,26 @@
+@mixin flex__column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex__align-items-center {
+  display: flex;
+  align-items: center; 
+}
+
+@mixin flex__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btn__hover {
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+@mixin position__end {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
