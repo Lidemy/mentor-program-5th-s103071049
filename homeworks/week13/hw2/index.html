@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week13 留言板 plugin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./dist/main.js"></script>
+    <script>
+        $(document).ready( () => {
+          commentPlugin.init({
+            siteKey: 'angela',
+            apiUrl: 'http://mentor-program.co/mtr04group3/s103071049/week12/hw1',
+            containerSelector: '.comments-area'
+          })
+        })
+        $(document).ready( () => {
+          commentPlugin.init({
+            siteKey: 'angela2',
+            apiUrl: 'http://mentor-program.co/mtr04group3/s103071049/week12/hw1',
+            containerSelector: '.comments-area2'
+          })
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+      <div class="comments-area"></div>
+      <div class="comments-area2"></div>
+    </div>
+</body>
+</html>
