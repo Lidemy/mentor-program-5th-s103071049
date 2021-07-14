@@ -1,0 +1,73 @@
+@import "./__variables.scss";
+@import "./__mixin.scss";
+
+* {
+  box-sizing: border-box;
+  margin: $margin-zero;
+  padding: $padding-zero;
+}
+
+body {
+  max-width: 100%;
+}
+
+form {
+  @include flex__column;
+  text-align: center;
+}
+
+input {
+  max-width: 80%;
+  margin-top: $margin__small-01;
+  width: 360px;
+  height: 40px;
+  padding: $padding__tiny-02;
+
+  &[type="submit"] {
+    background-image: $background;
+    color: $white-01;
+    width: 360px;
+    max-width: 80%;
+    margin-top: $margin__medium-01;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.input {
+  &__title {
+    text-align: left;
+    margin-left: $margin__medium-03;
+  }
+  &__block {
+    padding: $padding__small-01;
+  }
+}
+
+.submit__block {
+  padding: $padding__small-01;
+}
+
+.wrap {
+  width: 400px;
+  max-width: 80%;
+  height: 450px;
+  border: 1px solid $black-01;
+  margin: 0 auto;
+  margin-top: $margin__large-02;
+}
+
+.title {
+  font-size: $font__size-huge;
+  text-shadow: 1.4px 1.4px 2px $gray-01;
+  text-align: center;
+  margin-top: $margin__medium-01;
+  margin-bottom: $margin__medium-01;
+}
+
+.err__meg {
+  color: $red-01;
+  text-align: center;
+  margin-top: -$margin__medium-01;
+}
