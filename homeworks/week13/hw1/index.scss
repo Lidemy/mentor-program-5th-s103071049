@@ -1,0 +1,242 @@
+@import "./__variables.scss";
+@import "./__mixin.scss";
+
+* {
+  box-sizing: border-box;
+  margin: $margin-zero;
+  padding: $padding-zero;
+}
+
+body {
+  @include flex__column;
+  min-height: 100%;
+}
+
+nav {
+  @include flex__align-items-center;
+  justify-content: space-between;
+  height: 48px;
+  padding: $padding__small-01 $padding__medium-03;
+}
+
+img {
+  width: 13px;
+  height: 13px;
+  margin-right: $margin__small-02;
+}
+
+.content {
+  padding: $padding__large-01;
+  width: 80%;
+  border: 1px solid $black-01;
+  margin: 0 auto;
+  margin-top: $margin__medium-01;
+  line-height: $line-height-01;
+  &__block {
+    @include flex__align-items-center;
+  }
+}
+
+.management__block {
+  @include flex__align-items-center;
+}
+
+.wrap {
+    flex-grow: 1;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+}
+
+li a{
+  padding: $padding__small-01;
+  color: $gray-03;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    background: $black-01;
+    color: $white-01;
+    border-radius: $border-radius-01;
+    transition: 0.5s;
+  }
+}
+
+.blog {
+  &__title {
+    font-size: $font__size-larger;
+    font-weight: bold;
+    margin-left: $margin__medium-01;
+    margin-right: $margin__medium-01;
+  }
+
+  &__info {
+    @include flex__center;
+    flex-direction: column;
+    background: $background;
+    color: $white-01;
+    width: 100%;
+    height: 200px;
+  }
+
+  &__name {
+    font-size: $font__size-larger;
+    font-weight: bold;
+    margin-bottom: $margin__medium-01;
+  }
+
+  &__greeting {
+    font-size: $font__size-small;
+  }
+
+  &__post {
+    margin-bottom: $margin__medium-03;
+    margin-top: -$margin__medium-03;
+    & + & {
+      margin-top: $margin__large-01;
+    }
+    &_comments {
+      padding: $padding__medium-01;
+    }
+  }
+}
+
+.post {
+  width: 60%;
+  padding: $padding__medium-01 $padding__medium-02 $padding__small-02;
+  border: solid 1px $gray-02;
+  background: $white-01;
+  margin: 0 auto;
+  margin-bottom: $margin__medium-01;
+  &__middle-block {
+    height: 100%;
+  }
+  &__upper-block {
+    @include flex__align-items-center;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: $font__size-large;
+    font-weight: bold;
+    text-shadow: 1.4px 1.4px 2px $white-01;
+    &-block {
+      padding: $padding__tiny-02;
+      display: block;
+      outline: none;
+      border: none;
+      margin-bottom: $margin__medium-01;
+      font-size: $font__size-medium;
+      width: 100%;
+    }
+  }
+  &__info {
+    @include flex__align-items-center;
+    background-color: $gray-01;
+    padding: $padding__tiny-02 $padding__small-01;
+    margin-top: $margin__small-03;
+  }
+  &__content {
+    word-break: break-word;
+    white-space: pre-wrap;
+    overflow: hidden;
+    height: 80%;
+    padding: $padding__medium-01;
+  }
+  &__btn {
+    display: flex;
+  }
+  &__update-btn {
+    color: $gray-06;
+    text-align: center;
+    font-size: $font__size-small;
+    padding: $padding__tiny-01 $padding__tiny-03;
+    border: 1px solid $gray-02;
+    text-decoration: none;
+    &:hover {
+      @include btn__hover;
+      background: $black-01;
+      transition: 0.7s;
+    }
+    & + & {
+      margin-left: $margin__small-01;
+    }
+  }
+  &__readmore-btn {
+    color: $black-01;
+    border: solid 1px $gray-02;
+    padding: $padding__tiny-02;
+    width: 150px;
+    text-align: center;
+    margin-top: $margin__small-01;
+    display: block;
+    text-decoration: none;
+    &:hover {
+      @include btn__hover;
+    }
+  }
+}
+
+.backend__post {
+  width: 60%;
+  padding: $padding__medium-01 $padding__medium-02;
+  border: solid 1px $gray-02;
+  background: $white-01;
+  margin: 0 auto;
+  margin-bottom: $margin__medium-01;
+  border-radius: $border-radius-01;
+}
+
+
+
+.time {
+  font-size: $font__size-small;
+  text-align: center;
+  color: $gray-04;
+  margin-right: $margin__medium-01;
+  margin-top: $margin__miny-01;
+}
+
+.annoucement {
+  text-align: center;
+  color: $gray-04;
+  font-size: $font__size-small;
+}
+
+.text__block {
+  @include flex__column;
+}
+
+.submit__btn {
+  width: 300px;
+  padding: $padding__small-01;
+  background-image: $background;
+  color: $white-01;
+  font-weight: bold;
+  font-size: $font__size-small;
+  cursor: pointer;
+  border-radius: $border-radius-01;
+  margin-top: $margin__small-02;
+  border: 1px solid $black-01;
+}
+
+.hide {
+  display: none;
+}
+
+.err__msg {
+  color: $red-01;
+  margin-left: $margin__medium-02;
+  margin-top: $margin__medium-01;
+  border-bottom: 1px solid $red-01;
+  width: 120px;
+}
+
+footer {
+  background: $gray-05;
+  color: $white-01;
+  height: 30px;
+  width: 100%;
+  @include flex__center;
+  @include position__end;
+}
