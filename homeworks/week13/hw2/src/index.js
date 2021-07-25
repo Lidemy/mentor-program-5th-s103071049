@@ -53,6 +53,7 @@ export function init(options) {
       appendCommentToDom(commentToDom, datas, true)
     })
   })
+// 錯誤處理 沒有加上
   function getCommentsAPI(siteKey, before, cb) {
     let url = `${apiUrl}/api_comments.php?site_key=` + siteKey
     if (before) {

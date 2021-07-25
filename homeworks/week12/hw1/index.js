@@ -16,7 +16,7 @@ $(document).ready(() => {
     }
     $.ajax({
       type: 'POST',
-      url: 'http://localhost/angela/%e7%95%99%e8%a8%80%e6%9d%bf/TEST/week12/hw1/api_add_comments.php',
+      url: 'http://mentor-program.co/mtr04group3/s103071049/week12/hw1/api_add_comments.php',
       data: datas
     }).done(function(data) {
       if (!data.ok) {
@@ -57,7 +57,7 @@ function appendCommentToDom(container, comment, isPrepend) {
 }
 
 function getCommentsAPI(siteKey, before, cb) {
-  let url = "http://localhost/angela/%e7%95%99%e8%a8%80%e6%9d%bf/TEST/week12/hw1/api_comments.php?site_key=" + siteKey
+  let url = "http://mentor-program.co/mtr04group3/s103071049/week12/hw1/api_comments.php?site_key=" + siteKey
   if (before) {
     url += '&before=' + before
   }
