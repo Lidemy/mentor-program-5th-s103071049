@@ -6,3 +6,4 @@ function escape(unsafe) {
          .replace(/"/g, "&quot;")
          .replace(/'/g, "&#039;");
  }
+ 
