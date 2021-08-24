@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>部落格</title>
+  <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="content__block">
+      <div class = "blog__title">Who's Blog</div>
+        <ul>
+          <li><a href="#">文章專區</a></li>
+          <li><a href="#">分類專區</a></li>
+          <li><a href="#">關於我</a></li>
+        </ul>
+      </div>
+      <div class="management__block">
+        <ul>
+        <% if (username) { %>
+          <li><a href="/">首頁</a></li>
+          <li><a href="backend">管理後台</a></li>
+          <li><a href="logout">登出</a></li>
+        <% } else { %>
+          <li><a href="login">登入</a></li>
+        <% } %>
+        </ul>
+      </div>
+    </nav>
+    <section class="blog__info">
+      <div class="blog__name">存放技術之地</div>
+      <div class="blog__greeting">Welcome to my blog</div>
+    </section>
+     <div class="container-wrapper">
+        <div class="container">
+          <div class="edit-post content">
+            <h2 class="warning"><%= errorMessage %></h2>
+            <p><%= post.content %></p>
+            <div class="edit-post__btn-wrapper">
+                <input type="button" class="edit-post__btn" value="回前頁" onclick="history.back()">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <footer>
+    Copyright © 2020 Who's Blog All Rights Reserved.
+  </footer>
+</body>
+</html>

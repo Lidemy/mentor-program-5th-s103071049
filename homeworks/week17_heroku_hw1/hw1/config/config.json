@@ -1,11 +1,10 @@
 {
   "development": {
-    "username": "process.env.USERNAME",
-    "password": "process.env.PASSWORD",
-    "database": "process.env.DATABASE",
+    "username": "root",
+    "password": "null",
+    "database": "blog",
     "host": "localhost",
-    "dialect": "mysql",
-    "timezone": "+08:00"
+    "dialect": "mysql"
   },
   "test": {
     "username": "root",
