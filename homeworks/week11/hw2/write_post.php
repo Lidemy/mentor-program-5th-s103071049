@@ -59,10 +59,7 @@
 		?>
 		<section class="blog__post_comments">
 			<form action="handle_post_content.php" method="POST" clsss="text__block">
-				<input type="text" placeholder="Write your Title here" class="post__title-block" name="title">
-				<script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
-				<textarea name="editor1"></textarea>
-				<script>CKEDITOR.replace("editor1");</script>
+				<textarea name="content" cols="30" rows="10"></textarea>
 				<input type="submit" value="Submit" class="submit__btn">
 			</form>
 			

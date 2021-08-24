@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽獎專區</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="content__block">
+      <div class = "blog__title">Lucky draw </div>
+      </div>
+      <div class="management__block">
+        <ul>
+        <% if (username) { %>
+          <li><a href="addPrize">Add</a></li>
+          <li><a href="dashboard">Dashboard</a></li>
+          <li><a href="logout">logout</a></li>
+        <% } else {%>
+          <li><a href="login">login</a></li>
+        <% } %>
+        </ul>
+      </div>
+    </nav>
+    <section class="blog__info">
+      <div class="blog__name">To start your new life</div>
+      <div class="blog__greeting">尾牙抽起來，百萬富翁就是你</div>
+    </section>
+    <% if (username) { %>
+     <div class="container-wrapper">
+        <div class="container">
+          <div class="edit-post content">
+            <h2 class="warning"><%= errorMessage %></h2>
+              <table>
+                <div class="edit-post__title">
+                  DashBoard
+                </div>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Img url</th>
+                  <th>Probability</th>
+                  <th>Update</th>
+                  <th>Delete</th>
+                </tr>
+                <% prizes.forEach(function (prize) { %>
+                <tr>
+                    <td><%= prize.name %></td>
+                    <td><%= prize.description %></td>
+                    <td><img class="dashboard__img" src="<%= prize.imgUrl %>" alt=""></td>
+                    <td><%= prize.probability %></td>
+                    <td><a class="dashboard__update" href="updatePrize/<%= prize.id %>">編輯</a></td>
+                    <td><a class="dashboard__delete" href="deletePrize/<%= prize.id %>">刪除</a></td>
+                </tr>
+                <% }) %>
+              </table>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <footer>
+    Copyright © 2020 Who's lottery All Rights Reserved.
+  </footer>
+</body>
+</html>

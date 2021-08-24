@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽獎專區</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="content__block">
+      <div class = "blog__title">Lucky draw </div>
+      </div>
+      <div class="management__block">
+        <ul>
+        <% if (username) { %>
+          <li><a href="/addPrize">Add</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/logout">logout</a></li>
+        <% } else {%>
+          <li><a href="/login">login</a></li>
+        <% } %>
+        </ul>
+      </div>
+    </nav>
+    <section class="blog__info">
+      <div class="blog__name">To start your new life</div>
+      <div class="blog__greeting">尾牙抽起來，百萬富翁就是你</div>
+    </section>
+    <% if (username) { %>
+     <div class="container-wrapper">
+        <div class="container">
+          <div class="edit-post content">
+            <h2 class="warning"><%= errorMessage %></h2>
+            <form action="addPrize" method="POST">
+              <div class="edit-post__title">
+                新增獎品：
+              </div>
+              <div class="edit-post__input-wrapper">
+                <input class="edit-post__input" placeholder="輸入獎品名稱" name="name" />
+              </div>
+              <div class="edit-post__input-wrapper">
+                <input class="edit-post__input" placeholder="輸入獎品敘述" name="description" />
+              </div>
+              <div class="edit-post__input-wrapper">
+                <input class="edit-post__input" placeholder="輸入圖片 url" name="imgUrl" />
+              </div>
+              <div class="edit-post__input-wrapper">
+                <input class="edit-post__input" placeholder="輸入抽獎成功機率" name="probability" />
+              </div>
+              <div class="edit-post__btn-wrapper">
+                <input type="submit" class="edit-post__btn" value="儲存">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <footer>
+    Copyright © 2020 Who's lottery All Rights Reserved.
+  </footer>
+</body>
+</html>
