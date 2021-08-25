@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>抽獎專區</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav>
+      <div class="content__block">
+      <div class = "blog__title">Lucky draw </div>
+      </div>
+      <div class="management__block">
+        <ul>
+        <% if (username) { %>
+          <li><a href="addPrize">Add</a></li>
+          <li><a href="dashboard">Dashboard</a></li>
+          <li><a href="logout">logout</a></li>
+        <% } else {%>
+          <li><a href="login">login</a></li>
+        <% } %>
+        </ul>
+      </div>
+    </nav>
+    <section class="blog__info">
+      <div class="blog__name">To start your new life</div>
+      <div class="blog__greeting">尾牙抽起來，百萬富翁就是你</div>
+    </section>
+    <div class="wrapper">
+      <div class="lottery__btn">
+        <div class="prize"></div>
+        <button class="get__btn">一鍵在手，希望無窮</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    Copyright © 2020 Who's lottery All Rights Reserved.
+  </footer>
+  <script>
+    const apiUrl = 'https://intense-woodland-19337.herokuapp.com/api'
+    const errorMessage = '系統不穩定，請稍後再試'
+    const btn = document.querySelector('.get__btn')
+    btn.addEventListener('click', () => {
+      fetch(`${apiUrl}`, {method: 'get'})
+        .then((response) => {
+          return  data = response.json()
+        })
+        .then(data => {
+          const prize = document.querySelector('.prize')
+          const prizeHTML = `
+            <div class="prize__title">${data.name}</div>
+            <img class="prize__img" src="${data.imgUrl}">
+            <div class="prize__description">${data.description}</div>
+          `
+          prize.innerHTML = `${prizeHTML}`
+        })
+        .catch(err => {
+          alert(errorMessage)
+        })
+    })
+  </script>
+</body>
+</html>
