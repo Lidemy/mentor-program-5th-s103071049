@@ -81,6 +81,7 @@ const postController = {
       }
     }).then(post => {
       return post.update({
+        title: req.body.title,
         content: req.body.content
       })
     }).then(() => {

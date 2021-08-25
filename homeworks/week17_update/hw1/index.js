@@ -10,7 +10,7 @@ app.set('view engine', 'ejs')
 app.use(flash())
 app.use(express.static(__dirname + '/public'));
 app.use(session({
-  secret: 'keyboard cat',
+  secret: process.env.secret,
   resave: false,
   saveUninitialized: true
 }))

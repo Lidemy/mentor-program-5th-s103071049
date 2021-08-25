@@ -1,7 +1,7 @@
 const db = require('../models')
 const User = db.User
 const bcrypt = require('bcrypt')
-const saltRounds = 10
+const saltRounds = process.env.saltRounds
 const userController = {
   login: (req, res) => {
     res.render('login')
@@ -36,7 +36,7 @@ const userController = {
     })
   },
   logout: (req, res) => {
-    req.session.username = null
+    req.session.destroy()
     res.redirect('/')
   }
 }
