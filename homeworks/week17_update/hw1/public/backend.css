@@ -79,11 +79,16 @@ li a:hover {
 }
 
 footer {
-  padding: 10px 0px;
-  background-color: #323232;
-  font-size: 14px;
+  background: #323232;
   color: white;
-  text-align: center;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 
 
@@ -185,7 +190,6 @@ img {
   overflow: hidden;
   height: 80%;
   padding: 24px;
-  line-height: 1.5em;
 }
 
 .post__readmore-btn {
@@ -255,59 +259,8 @@ img {
 .content {
   padding: 48px;
   width: 80%;
-  border: 1px solid gray;
+  border: 1px solid black;
   margin: 0 auto;
   margin-top: 24px;
   line-height: 1.6;
-}
-
-.edit-post {
-  width: 900px;
-  padding: 30px;
-  border: solid 1px #9a9a9a;
-}
-
-.edit-post__title {
-  font-size: 20px;
-}
-
-.edit-post__input-wrapper {
-  width: 100%;
-  margin-top: 28px;
-}
-
-.edit-post__input-wrapper input, .edit-post__input-wrapper textarea {
-  width: 100%;
-  padding: 6px;
-}
-
-.edit-post__btn-wrapper {
-  text-align: right;
-}
-
-.edit-post__btn {
-  display: inline-block;
-  padding: 10px 39px;
-  border: solid 1px #737373;
-  color: #737373;
-  cursor: pointer;
-  margin-top: 25px;
-}
-
-.warning {
-  color: red;
-}
-
-.ellipsis{
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  white-space: pre-wrap;
-}
-
-.whitespace {
-  white-space: pre-wrap;
 }

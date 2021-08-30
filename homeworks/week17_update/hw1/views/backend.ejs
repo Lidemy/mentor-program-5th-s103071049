@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>部落格</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="backend.css">
 </head>
 <body>
   <div class="wrap">
@@ -19,43 +19,37 @@
       </div>
       <div class="management__block">
         <ul>
-        <% if (username) { %>
+          <li><a href="/">首頁</a></li>
           <li><a href="/addPost">發布文章</a></li>
-          <li><a href="/backend">管理後台</a></li>
           <li><a href="/logout">登出</a></li>
-        <% } else {%>
-          <li><a href="/login">登入</a></li>
-        <% } %>
         </ul>
       </div>
     </nav>
     <section class="blog__info">
-      <div class="blog__name">存放技術之地</div>
-      <div class="blog__greeting">Welcome to my blog</div>
+      <div class="blog__name">後台管理</div>
+      <div class="blog__greeting">Welcome back boss</div>
     </section>
+  </div>
     <section class="blog__post">
       <% posts.forEach((post) => { %>
-        <div class="post">
+        <div class="backend__post">
           <div class="post__upper-block">
             <div class="post__title"><%= post.title %></div>
             <form class="post__btn" method='GET'>
-              <% if (username) {%>
-                <a href="update/<%= post.id %>" class="post__update-btn">編輯</a>
-                <a href="delete/<%= post.id %>" class="post__update-btn">刪除</a>
-              <% }%>
+            <% if (username) {%>
+              <a href="update/<%= post.id %>" class="post__update-btn">編輯</a>
+              <a href="delete/<%= post.id %>" class="post__update-btn">刪除</a>
+              <a href="readMore/<%= post.id %>" class="post__update-btn">瀏覽</a>
             </form>
           </div>
-          <div class="post__middle-block">
             <div class="post__info">
               <div class='time'><%= post.createdAt %></div>
+              <div class="annoucement">歷史公告</div>
             </div>
-            <div class="post__content ellipsis"><%= post.content %></div>
-            <a href="/readMore/<%= post.id %>" class="post__readmore-btn">READ MORE</a>
-          </div>
+            <% }%>
         </div>
       <% }) %>
     </section>
-  </div>
   <footer>
     Copyright © 2020 Who's Blog All Rights Reserved.
   </footer>

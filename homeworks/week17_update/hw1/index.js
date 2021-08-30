@@ -21,10 +21,12 @@ app.use((req, res, next) => {
   res.locals.username = req.session.username
   next()
 })
+
 function redirectBack(req, res, next) {
   res.redirect('back')
   return next()
 }
+
 app.get('/login', userController.login)
 app.post('/login', userController.handleLogin, redirectBack)
 app.get('/logout', userController.logout)
@@ -35,6 +37,7 @@ app.get('/delete/:id', postController.delete, redirectBack)
 app.get('/update/:id', postController.update)
 app.post('/update/:id', postController.handleUpdate, redirectBack)
 app.get('/readMore/:id', postController.readMore)
+app.get('/backend', postController.backend)
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })

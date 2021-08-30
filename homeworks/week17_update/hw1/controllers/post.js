@@ -102,6 +102,19 @@ const postController = {
     }).catch(() => {
       res.redirect('/')
     })
+  },
+  backend: (req, res) => {
+    const {username} = req.session
+    if (!username) {
+      return res.redirect('login')
+    }
+    Post.findAll({
+      include: User
+    }).then(posts => {
+      res.render('backend', {
+        posts
+      })
+    })
   }
 }
 
