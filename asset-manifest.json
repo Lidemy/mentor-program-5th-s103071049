@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-fiveStepChess/static/css/main.2e7919c8.chunk.css",
+    "main.js": "/react-fiveStepChess/static/js/main.779b5120.chunk.js",
+    "main.js.map": "/react-fiveStepChess/static/js/main.779b5120.chunk.js.map",
+    "runtime-main.js": "/react-fiveStepChess/static/js/runtime-main.8b324ecc.js",
+    "runtime-main.js.map": "/react-fiveStepChess/static/js/runtime-main.8b324ecc.js.map",
+    "static/js/2.b0e1e130.chunk.js": "/react-fiveStepChess/static/js/2.b0e1e130.chunk.js",
+    "static/js/2.b0e1e130.chunk.js.map": "/react-fiveStepChess/static/js/2.b0e1e130.chunk.js.map",
+    "static/js/3.45871e5f.chunk.js": "/react-fiveStepChess/static/js/3.45871e5f.chunk.js",
+    "static/js/3.45871e5f.chunk.js.map": "/react-fiveStepChess/static/js/3.45871e5f.chunk.js.map",
+    "index.html": "/react-fiveStepChess/index.html",
+    "static/css/main.2e7919c8.chunk.css.map": "/react-fiveStepChess/static/css/main.2e7919c8.chunk.css.map",
+    "static/js/2.b0e1e130.chunk.js.LICENSE.txt": "/react-fiveStepChess/static/js/2.b0e1e130.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8b324ecc.js",
+    "static/js/2.b0e1e130.chunk.js",
+    "static/css/main.2e7919c8.chunk.css",
+    "static/js/main.779b5120.chunk.js"
+  ]
+}
