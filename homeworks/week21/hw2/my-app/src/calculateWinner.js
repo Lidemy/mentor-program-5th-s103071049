@@ -8,7 +8,6 @@ export const calculateWinner = (squares, x, y) => {
 }
 
 function countTotal(squares ,currentY, currentX, directionX, directionY) {
-  console.log('squares', squares)
   let now = squares[currentY][currentX]
   let tempX = currentX + directionX
   let tempY = currentY + directionY

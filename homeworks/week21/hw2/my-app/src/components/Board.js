@@ -10,15 +10,17 @@ const BoardRow = styled.div`
   display: flex;
 `
 
+let id = 1
 const Board = ({squares, handleClick}) => {
   const renderSquare = (y, x) => {
-    return <Square value={squares[y][x]} key={[y][x]} onClick={() => {handleClick(y, x)}}/>
+    return <Square value={squares[y][x]} key={y +'.'+ x} onClick={() => {handleClick(y, x)}}/>
   }
   return (
     <div>
     {squares.map((each, rowIndex) => {
+      id ++
       return (
-        <BoardRow>
+        <BoardRow key={id}>
           {
             squares.map((each, colIndex) => {
               return renderSquare(rowIndex, colIndex)
