@@ -1,56 +1,88 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectTodosByFilterState } from "./redux/selectors.js";
+import {
+  addTodo,
+  clearAllTodos,
+  deleteTodo,
+  setFilters,
+  markTodos,
+} from "./redux/actions";
+import styled from "styled-components";
+import TodoItem from "./components/TodoItem.js";
+import FilterList from "./components/FilterList.js";
+const TodoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  margin-bottom: 24px;
+`;
+const Title = styled.div`
+  font-size: 36px;
+`;
+const AddTodo = styled.div`
+  margin-bottom: 12px;
+`;
+const Button = styled.button`
+  margin-left: 4px;
+`;
 
 function App() {
+  const filtersTodos = useSelector(selectTodosByFilterState);
+  const dispatch = useDispatch();
+  const [value, setValue] = useState("");
+
+  const handleAddTodo = () => {
+    if (!value) {
+      return alert("not typing any word");
+    }
+    dispatch(addTodo(value));
+    setValue("");
+  };
+  const handleInputChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const handleDeleteTodo = (id) => {
+    dispatch(deleteTodo(id));
+  };
+  const handleToggleIsDone = (id) => {
+    dispatch(markTodos(id));
+  };
+  const handleClearAll = () => {
+    dispatch(clearAllTodos());
+  };
+  const handleFilter = (name) => {
+    dispatch(setFilters(name));
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
+    <div>
+      <TodoWrapper>
+        <Title>Todo List</Title>
+        <AddTodo>
+          <input
+            type="text"
+            placeholder="please type todos"
+            value={value}
+            onChange={handleInputChange}
+          />
+          <Button onClick={handleAddTodo}>add</Button>
+        </AddTodo>
+        <FilterList
+          handleClearAll={handleClearAll}
+          handleFilter={handleFilter}
+        />
+      </TodoWrapper>
+      {filtersTodos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          handleDeleteTodo={handleDeleteTodo}
+          handleToggleIsDone={handleToggleIsDone}
+        />
+      ))}
     </div>
   );
 }
